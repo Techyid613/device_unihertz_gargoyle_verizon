@@ -97,3 +97,67 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     MTK-IMS-A13 \
 	KeyMapper
+
+# Verizon Vendor Blobs Integration
+VERIZON_VENDOR := device/unihertz/prebuilt/verizon_vendor_blobs/
+
+# RIL Libraries (32-bit)
+PRODUCT_COPY_FILES += \
+	$(VERIZON_VENDOR)/lib/libril.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libril.so \
+	$(VERIZON_VENDOR)/lib/librilutils.so:$(TARGET_COPY_OUT_SYSTEM)/lib/librilutils.so \
+	$(VERIZON_VENDOR)/lib/libreference-ril.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libreference-ril.so \
+	$(VERIZON_VENDOR)/lib/libmtkrillog.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libmtkrillog.so \
+	$(VERIZON_VENDOR)/lib/libcarrierconfig.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libcarrierconfig.so \
+	$(VERIZON_VENDOR)/lib/libipsec_ims_shr.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libipsec_ims_shr.so \
+
+# RIL Libraries (64-bit)
+PRODUCT_COPY_FILES += \
+	$(VERIZON_VENDOR)/lib64/libril.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libril.so \
+	$(VERIZON_VENDOR)/lib64/librilutils.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/librilutils.so \
+	$(VERIZON_VENDOR)/lib64/libreference-ril.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libreference-ril.so \
+	$(VERIZON_VENDOR)/lib64/libmtk-ril.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libmtk-ril.so \
+	$(VERIZON_VENDOR)/lib64/libmtkrillog.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libmtkrillog.so \
+	$(VERIZON_VENDOR)/lib64/libmtkrilutils.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libmtkrilutils.so \
+	$(VERIZON_VENDOR)/lib64/librilfusion.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/librilfusion.so \
+	$(VERIZON_VENDOR)/lib64/libvia-ril.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libvia-ril.so \
+	$(VERIZON_VENDOR)/lib64/libcarrierconfig.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libcarrierconfig.so \
+	$(VERIZON_VENDOR)/lib64/libipsec_ims_shr.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libipsec_ims_shr.so \
+
+# VoLTE Binaries
+PRODUCT_COPY_FILES += \
+	$(VERIZON_VENDOR)/volte_imcb:$(TARGET_COPY_OUT_SYSTEM)/bin/volte_imcb \
+	$(VERIZON_VENDOR)/volte_stack:$(TARGET_COPY_OUT_SYSTEM)/bin/volte_stack \
+	$(VERIZON_VENDOR)/volte_ua:$(TARGET_COPY_OUT_SYSTEM)/bin/volte_ua \
+
+# Carrier Configurations
+PRODUCT_COPY_FILES += \
+	$(VERIZON_VENDOR)/etc/vendor-apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml \
+
+
+# VoLTE Binaries
+PRODUCT_COPY_FILES += \
+	$(VERIZON_VENDOR)/volte_imcb:$(TARGET_COPY_OUT_SYSTEM)/bin/volte_imcb \
+	$(VERIZON_VENDOR)/volte_stack:$(TARGET_COPY_OUT_SYSTEM)/bin/volte_stack \
+	$(VERIZON_VENDOR)/volte_ua:$(TARGET_COPY_OUT_SYSTEM)/bin/volte_ua \
+	$(VERIZON_VENDOR)/volte_imsm_93:$(TARGET_COPY_OUT_SYSTEM)/bin/volte_imsm_93 \
+	$(VERIZON_VENDOR)/volte_md_status:$(TARGET_COPY_OUT_SYSTEM)/bin/volte_md_status \
+
+# RIL Daemon
+PRODUCT_COPY_FILES += \
+	$(VERIZON_VENDOR)/bin/mtkfusionrild:$(TARGET_COPY_OUT_SYSTEM)/bin/mtkfusionrild \
+
+# Carrier Configurations
+PRODUCT_COPY_FILES += \
+	$(VERIZON_VENDOR)/etc/vendor-apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml \
+	$(VERIZON_VENDOR)/etc/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/agps_profiles_conf2_carrier_Verizon_Wireless.xml \
+
+# VoLTE Init Scripts
+PRODUCT_COPY_FILES += \
+	$(VERIZON_VENDOR)/init.volte_imcb.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.volte_imcb.rc \
+	$(VERIZON_VENDOR)/init.volte_stack.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.volte_stack.rc \
+	$(VERIZON_VENDOR)/init.volte_ua.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.volte_ua.rc \
+
+# IMS Permission
+PRODUCT_COPY_FILES += \
+	$(VERIZON_VENDOR)/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.ims.xml \
+
